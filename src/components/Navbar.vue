@@ -5,14 +5,15 @@
     <div class="container-fluid">
       <a class="navbar-brand" :class="[theme === 'dark' ? 'text-light' : 'text-dark']" href="#">My Vue</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li v-for="(page, index) in publishedPages" class="nav-item" :key="index">
+
           <navbar-link
+            v-for="(page, index) in publishedPages" class="nav-item" :key="index"
             :page="page"
+            :index="index"
             :isActive="activePage === index"
             :theme="theme"
-            @click.prevent="navLinkClick(index)"
           ></navbar-link>
-        </li>
+
       </ul>
       <form class="d-flex">
         <button class="btn btn-primary" @click.prevent="changeTheme()">
@@ -38,7 +39,7 @@ export default {
         return this.pages.filter(page => page.published);
     }
   },
-  props: ["pages", "activePage", "navLinkClick"],
+  props: ["pages", "activePage"],
   data() {
     return {
       theme: "light",

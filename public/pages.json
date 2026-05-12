@@ -2,16 +2,19 @@
   {
     "link": { "text": "Home", "href": "index.html" },
     "pageTitle": "Home Page",
-    "content": "This is the home page."
+    "content": "This is the home page.",
+    "published" : true
   },
   {
     "link": { "text": "About", "href": "about.html" },
     "pageTitle": "About Page",
-    "content": "This is the about page."
+    "content": "This is the about page.",
+    "published" : true
   },
   {
     "link": { "text": "Contact", "href": "contact.html" },
     "pageTitle": "Contact Page",
-    "content": "This is the contact page."
+    "content": "This is the contact page.",
+    "published" : false
   }
 ]

@@ -10,12 +10,14 @@
 
 <script>
 export default{
-    props: ['page', 'isActive'],
+    props: ['page', 'isActive', 'theme'],
     computed: {
         activeClasses(){
             return {
                 active: this.isActive,
-                emphasize: this.isActive
+                emphasize: this.isActive,
+                'text-light': this.theme === 'dark',
+                'text-dark': this.theme === 'light'
             };
         }
     }
@@ -25,5 +27,13 @@ export default{
 <style scoped>
 .emphasize {
     text-decoration: underline !important;
+}
+
+.text-light {
+    color: #ffffff !important;
+}
+
+.text-dark {
+    color: #000000 !important;
 }
 </style>

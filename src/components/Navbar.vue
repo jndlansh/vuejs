@@ -20,7 +20,7 @@
         ></navbar-link>
 
         <li>
-          <router-link to="/create" class="nav-link" active-class="active" :class="[theme === 'dark' ? 'text-light' : 'text-dark']" aria-current="page"
+          <router-link to="/pages/create" class="nav-link" active-class="active" :class="[theme === 'dark' ? 'text-light' : 'text-dark']" aria-current="page"
             >Create Page
           </router-link>
         </li>

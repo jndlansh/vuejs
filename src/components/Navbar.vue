@@ -20,8 +20,8 @@
         ></navbar-link>
 
         <li>
-          <router-link to="/pages/create" class="nav-link" active-class="active" :class="[theme === 'dark' ? 'text-light' : 'text-dark']" aria-current="page"
-            >Create Page
+          <router-link to="/pages" class="nav-link" active-class="active" :class="[theme === 'dark' ? 'text-light' : 'text-dark']" aria-current="page"
+            >Pages
           </router-link>
         </li>
       </ul>
@@ -40,11 +40,13 @@ export default {
   components: {
     NavbarLink,
   },
+  inject: ['$pages'],
   name: "NavBar",
   created() {
     this.getThemeSettings();
 
-    this.localPages = this.$pages.getAllPages();
+    const pages = this.$pages.getAllPages();
+    this.localPages = Array.isArray(pages) ? pages : [];
   },
   computed: {
     publishedPages() {
